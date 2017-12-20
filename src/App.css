@@ -1,28 +1,199 @@
+
+#fork-me-on-github {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#fork-me-on-github img {
+  width: 150px;
+}
+
 .App {
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+.header .jumbotron {
   text-align: center;
+  background-color: white;
+  margin-bottom: 0px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.header .jumbotron h1 {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header .jumbotron h1 span {
+  color: orange;
 }
 
-.App-title {
-  font-size: 1.5em;
+.header .npm-stats {
+  margin-bottom: 5px;
 }
 
-.App-intro {
-  font-size: large;
+.header .npm-stats img {
+  max-width: 90%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header .badges {
+  margin-bottom: 5px;
+}
+
+.section h1 {
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.last-section {
+  margin-bottom: 20px;
+}
+
+.footer h2 {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+@media (min-width: 0px) {
+  #fork-me-on-github {
+    display: none;
+  }
+  .header .jumbotron h1 {
+    font-size: 2em;
+  }
+  .header .jumbotron .lead {
+    font-size: 1em;
+  }
+  .section h1 {
+    font-size: 28px;
+  }
+  .section h2 {
+    font-size: 18px;
+  }
+  .section p {
+    font-size: 16px;
+  }
+  .section li {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 576px) {
+  #fork-me-on-github {
+    display: none;
+  }
+  .header .jumbotron h1 {
+    font-size: 4em;
+  }
+  .header .jumbotron .lead {
+    font-size: 1.5em;
+  }
+  .section h1 {
+    font-size: 36px;
+  }
+  .section h2 {
+    font-size: 24px;
+  }
+  .section p {
+    font-size: 18px;
+  }
+  .section li {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #fork-me-on-github {
+    display: block;
+  }
+  .header .jumbotron h1 {
+    font-size: 4em;
+  }
+  .header .jumbotron .lead {
+    font-size: 1.5em;
+  }
+  .section h1 {
+    font-size: 36px;
+  }
+  .section h2 {
+    font-size: 24px;
+  }
+  .section p {
+    font-size: 18px;
+  }
+  .section li {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #fork-me-on-github {
+    display: block;
+  }
+  .header .jumbotron h1 {
+    font-size: 5em;
+  }
+  .header .jumbotron .lead {
+    font-size: 1.5em;
+  }
+  .section h1 {
+    font-size: 36px;
+  }
+  .section h2 {
+    font-size: 24px;
+  }
+  .section p {
+    font-size: 18px;
+  }
+  .section li {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #fork-me-on-github {
+    display: block;
+  }
+  .header .jumbotron h1 {
+    font-size: 7em;
+  }
+  .header .jumbotron .lead {
+    font-size: 1.5em;
+  }
+  .section h1 {
+    font-size: 36px;
+  }
+  .section h2 {
+    font-size: 24px;
+  }
+  .section p {
+    font-size: 18px;
+  }
+  .section li {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
+pre.prettyprint, code.prettyprint {
+	border-radius: 8px;
+}
+
+pre.prettyprint {
+	width: 95%;
+	margin: 1em auto;
+	padding: 1em;
+	white-space: pre-wrap;
 }
