@@ -1,52 +1,89 @@
 
-#fork-me-on-github {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-#fork-me-on-github img {
-  width: 150px;
-}
-
+/* General styles. */
 .App {
   margin-left: 0px;
   margin-right: 0px;
   font-family: 'Lato', sans-serif;
 }
 
-.header .jumbotron {
+/* Siderbar styles. */
+#sidebar a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px 20px 0px 20px;
+}
+
+#sidebar .sidebar-header h4 {
+  color: #3f3f3f;
+}
+
+#sidebar .sidebar-header h4 span {
+  color: orange;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px 20px;
+  font-size: 1.1em;
+  color: #7b7b7b;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #3f3f3f;
+  background: #fff;
+}
+
+/* Header. */
+.Header .jumbotron {
   text-align: center;
   background-color: white;
   margin-bottom: 0px;
 }
 
-.header .jumbotron h1 {
+.Header .jumbotron h1 {
   font-family: 'Ubuntu Mono', monospace;
   font-weight: bold;
 }
 
-.header .jumbotron h1 span {
+.Header .jumbotron h1 span {
   color: orange;
 }
 
-.header .npm-stats {
+.Header .npm-stats {
   margin-bottom: 5px;
 }
 
-.header .npm-stats img {
+.Header .npm-stats img {
   max-width: 90%;
 }
 
-.header .badges {
+.Header .badges {
   margin-bottom: 5px;
 }
 
+/* Sections. */
 .section h1 {
   font-weight: bold;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  padding-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 25px;
 }
 
 .section h2 {
@@ -55,21 +92,35 @@
 }
 
 .last-section {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
-.footer h2 {
+/* Footer. */
+.Footer h2 {
   font-family: 'Ubuntu Mono', monospace;
 }
 
+/* Example textbox styiling. */
+pre.prettyprint, code.prettyprint {
+	border-radius: 8px;
+}
+
+pre.prettyprint {
+	margin: 1em auto;
+	padding: 1em;
+}
+
+/* Styles relative to viewport size. */
+
+/* xs */
 @media (min-width: 0px) {
-  #fork-me-on-github {
+  .github-fork-ribbon-wrapper {
     display: none;
   }
-  .header .jumbotron h1 {
+  .Header .jumbotron h1 {
     font-size: 2em;
   }
-  .header .jumbotron .lead {
+  .Header .jumbotron .lead {
     font-size: 1em;
   }
   .section h1 {
@@ -87,14 +138,15 @@
   }
 }
 
+/* sm */
 @media (min-width: 576px) {
-  #fork-me-on-github {
-    display: none;
+  .github-fork-ribbon-wrapper {
+    display: block;
   }
-  .header .jumbotron h1 {
+  .Header .jumbotron h1 {
     font-size: 4em;
   }
-  .header .jumbotron .lead {
+  .Header .jumbotron .lead {
     font-size: 1.5em;
   }
   .section h1 {
@@ -112,14 +164,15 @@
   }
 }
 
+/* md */
 @media (min-width: 768px) {
-  #fork-me-on-github {
+  .github-fork-ribbon-wrapper {
     display: block;
   }
-  .header .jumbotron h1 {
+  .Header .jumbotron h1 {
     font-size: 4em;
   }
-  .header .jumbotron .lead {
+  .Header .jumbotron .lead {
     font-size: 1.5em;
   }
   .section h1 {
@@ -137,14 +190,15 @@
   }
 }
 
+/* lg */
 @media (min-width: 992px) {
-  #fork-me-on-github {
+  .github-fork-ribbon-wrapper {
     display: block;
   }
-  .header .jumbotron h1 {
+  .Header .jumbotron h1 {
     font-size: 5em;
   }
-  .header .jumbotron .lead {
+  .Header .jumbotron .lead {
     font-size: 1.5em;
   }
   .section h1 {
@@ -162,14 +216,18 @@
   }
 }
 
+/* xl */
 @media (min-width: 1200px) {
-  #fork-me-on-github {
+  .App {
+    margin-left: -100px;
+  }
+  .github-fork-ribbon-wrapper {
     display: block;
   }
-  .header .jumbotron h1 {
+  .Header .jumbotron h1 {
     font-size: 7em;
   }
-  .header .jumbotron .lead {
+  .Header .jumbotron .lead {
     font-size: 1.5em;
   }
   .section h1 {
@@ -182,18 +240,7 @@
     font-size: 18px;
   }
   .section li {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 0;
   }
-}
-
-pre.prettyprint, code.prettyprint {
-	border-radius: 8px;
-}
-
-pre.prettyprint {
-	width: 95%;
-	margin: 1em auto;
-	padding: 1em;
-	white-space: pre-wrap;
 }
