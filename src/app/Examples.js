@@ -7,45 +7,90 @@ class Examples extends Component {
         <h1>Examples</h1>
 
         <h2>Generate a random Bitcoin Cash address</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
-            const bitcoinCash = require('bitcoincashjs');<br/>
-            <br/>
-            const privateKey = new bitcoinCash.PrivateKey();<br/>
-            const address = privateKey.toAddress();<br/>
-            <br/>
-            console.log(address.toString()) // 15WZwpw3BofscM2u43ji85BXucai5YGToL
+            {[
+              "const bitcoinCash = require('bitcoincashjs');",
+              "",
+              "const privateKey = new bitcoinCash.PrivateKey();",
+              "const address = privateKey.toAddress();",
+              "",
+              "console.log(address.toString()) // 15WZwpw3BofscM2u43ji85BXucai5YGToL",
+            ].join('\n')}
           </code>
         </pre>
 
         <h2>Generate a address from a SHA256 hash</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
-          const bitcoinCash = require('bitcoincashjs');<br />
-          <br />
-          const value = new Buffer('Bitcoin Cash - Peer-to-Peer Electronic Cash');<br />
-          const hash = bitcoinCash.crypto.Hash.sha256(value);<br />
-          const bn = bitcoinCash.crypto.BN.fromBuffer(hash);<br />
-          const address = new bitcoinCash.PrivateKey(bn).toAddress();<br />
-          <br />
-          console.log(address.toString()) // 126tFHmNHNAXDYT1QeEBEwBbEojib1VZyg
+            {[
+              "const bitcoinCash = require('bitcoincashjs');",
+              "",
+              "const value = new Buffer('Bitcoin Cash - Peer-to-Peer Electronic Cash');",
+              "const hash = bitcoinCash.crypto.Hash.sha256(value);",
+              "const bn = bitcoinCash.crypto.BN.fromBuffer(hash);",
+              "const address = new bitcoinCash.PrivateKey(bn).toAddress();",
+              "",
+              "console.log(address.toString()) // 126tFHmNHNAXDYT1QeEBEwBbEojib1VZyg",
+            ].join('\n')}
+          </code>
+        </pre>
+
+        <h2>Translate an address to any Bitcoin Cash address format</h2>
+        <pre>
+          <code className="language-js">
+            {[
+              "const bitcoinCash = require('bitcoincashjs');",
+              "",
+              "const Address = bitcoinCash.Address;",
+              "const BitpayFormat = Address.BitpayFormat;",
+              "const CashAddrFormat = Address.CashAddrFormat;",
+              "",
+              "const address = new Address('1MF7A5H2nHYYJMieouip2SkZiFZMBKqSZe');",
+              "",
+              "console.log(address.toString()) // 1MF7A5H2nHYYJMieouip2SkZiFZMBKqSZe",
+              "console.log(address.toString(BitpayFormat)) // Cchzj7d6fLX5CVd5Vf3jbxNbLNmm4BTYuG",
+              "console.log(address.toString(CashAddrFormat)) // bitcoincash:qr0q67nsn66cf3klfufttr0vuswh3w5nt5jqpp20t9",
+            ].join('\n')}
+          </code>
+        </pre>
+
+        <h2>Read an address from any Bitcoin Cash address format</h2>
+        <pre>
+          <code className="language-js">
+            {[
+              "const bitcoinCash = require('bitcoincashjs');",
+              "",
+              "const Address = bitcoinCash.Address;",
+              "const BitpayFormat = Address.BitpayFormat;",
+              "const CashAddrFormat = Address.CashAddrFormat;",
+              "",
+              "const legacy = Address.fromString('1MF7A5H2nHYYJMieouip2SkZiFZMBKqSZe',",
+              "                 'mainnet', 'pubkeyhash');",
+              "const bitpay = Address.fromString('Cchzj7d6fLX5CVd5Vf3jbxNbLNmm4BTYuG',",
+              "                 'mainnet', 'pubkeyhash', BitpayFormat);",
+              "const cashaddr = Address.fromString('bitcoincash:qr0q67nsn66cf3klfufttr0vuswh3w5nt5jqpp20t9',",
+              "                 'mainnet', 'pubkeyhash', CashAddrFormat);",
+            ].join('\n')}
           </code>
         </pre>
 
         <h2>Import an address via WIF</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
-            const bitcoinCash = require('bitcoincashjs');<br />
-            <br />
-            const wif = 'Kxr9tQED9H44gCmp6HAdmemAzU3n84H3dGkuWTKvE23JgHMW8gct';<br />
-            const address = new bitcoinCash.PrivateKey(wif).toAddress();<br />
-            <br />
-            console.log(address.toString()) // 19AAjaTUbRjQCMuVczepkoPswiZRhjtg31<br />
+            {[
+              "const bitcoinCash = require('bitcoincashjs');",
+              "",
+              "const wif = 'Kxr9tQED9H44gCmp6HAdmemAzU3n84H3dGkuWTKvE23JgHMW8gct';",
+              "const address = new bitcoinCash.PrivateKey(wif).toAddress();",
+              "",
+              "console.log(address.toString()) // 19AAjaTUbRjQCMuVczepkoPswiZRhjtg31",
+            ].join('\n')}
           </code>
         </pre>
 
         <h2>Create a Transaction</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
             {[
               "const bitcoinCash = require('bitcoincashjs');",
@@ -69,7 +114,7 @@ class Examples extends Component {
         </pre>
 
         <h2>Verify a Bitcoin message</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
             {[
               "const bitcoinCash = require('bitcoincashjs');",
@@ -85,7 +130,7 @@ class Examples extends Component {
         </pre>
 
         <h2>Sign a Bitcoin message</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
             {[
               "const bitcoinCash = require('bitcoincashjs');",
@@ -102,7 +147,7 @@ class Examples extends Component {
         </pre>
 
         <h2>Create an OP_RETURN transaction</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
             {[
               "const bitcoinCash = require('bitcoincashjs');",
@@ -126,7 +171,7 @@ class Examples extends Component {
         </pre>
 
         <h2>Create a 2-of-3 multisig P2SH address</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
             {[
               "const bitcoinCash = require('bitcoincashjs');",
@@ -145,7 +190,7 @@ class Examples extends Component {
         </pre>
 
         <h2>Spend from a 2-of-2 multisig P2SH address</h2>
-        <pre className="prettyprint">
+        <pre>
           <code className="language-js">
             {[
               "const bitcoinCash = require('bitcoincashjs');",

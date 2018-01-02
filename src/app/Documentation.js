@@ -5,7 +5,7 @@ class Documentation extends Component {
     return (
       <div id="Documentation" className="Documentation">
         <h1>Documentation</h1>
-        <p>Read the Developer Guide and the complete docs here: <a href="http://bitcore.io/guide/">BitcoinCash.js documentation</a></p>
+        <p>You can find more comprehensive documentation on BitcoinCash.js in our Github <a href="https://github.com/bitcoincashjs/bitcoincashjs" target="_blank" rel="noopener noreferrer">repository</a>.</p>
       </div>
     );
   }

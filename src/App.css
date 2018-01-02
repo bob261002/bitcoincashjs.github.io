@@ -78,12 +78,20 @@
   margin-bottom: 5px;
 }
 
+.Header .badges a {
+  margin: 0 2px;
+}
+
 /* Sections. */
 .section h1 {
   font-weight: bold;
   padding-top: 10px;
   margin-top: 30px;
   margin-bottom: 25px;
+}
+
+.About h1 span {
+  color: orange;
 }
 
 .section h2 {
@@ -98,16 +106,6 @@
 /* Footer. */
 .Footer h2 {
   font-family: 'Ubuntu Mono', monospace;
-}
-
-/* Example textbox styiling. */
-pre.prettyprint, code.prettyprint {
-	border-radius: 8px;
-}
-
-pre.prettyprint {
-	margin: 1em auto;
-	padding: 1em;
 }
 
 /* Styles relative to viewport size. */

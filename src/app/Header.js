@@ -12,14 +12,21 @@ class Header extends Component {
           <div className="container">
             <h1 className="display">BitcoinCash.js</h1>
             <p className="lead">
-              The clean, readable, proven JavaScript library for <strong>Bitcoin Cash</strong>. <br />
-              Based on the amazing <em>Bitcore Library</em>.
+              The simple, safe, and powerful JavaScript library for <strong>Bitcoin Cash</strong>. <br />
             </p>
             <div className="npm-stats">
               <img src="https://nodei.co/npm/bitcoincashjs.png" alt="Npm Stats" />
             </div>
             <div className="badges">
-              <img src="https://travis-ci.org/bitcoincashjs/bitcoincashjs.png?branch=master" alt="Build Status" />
+              <a href="https://www.npmjs.org/package/bitcoincashjs">
+                <img src="https://img.shields.io/npm/v/bitcoincashjs.svg?style=flat-square" alt="NPM Package" />
+              </a>
+              <a href="https://travis-ci.org/bitcoincashjs/bitcoincashjs">
+                <img src="https://img.shields.io/travis/bitcoincashjs/bitcoincashjs.svg?branch=master&style=flat-square" alt="Build Status" />
+              </a>
+              <a href="https://coveralls.io/r/bitcoincashjs/bitcoincashjs">
+                <img src="https://img.shields.io/coveralls/bitcoincashjs/bitcoincashjs.svg?style=flat-square" alt="Coverage Status" />
+              </a>
             </div>
           </div>
         </div>
