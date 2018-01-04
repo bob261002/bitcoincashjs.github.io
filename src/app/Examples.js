@@ -10,9 +10,9 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
-              "const privateKey = new bitcoinCash.PrivateKey();",
+              "const privateKey = new bch.PrivateKey();",
               "const address = privateKey.toAddress();",
               "",
               "console.log(address.toString()) // 15WZwpw3BofscM2u43ji85BXucai5YGToL",
@@ -20,16 +20,16 @@ class Examples extends Component {
           </code>
         </pre>
 
-        <h2>Generate a address from a SHA256 hash</h2>
+        <h2>Generate an address from a SHA256 hash</h2>
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
               "const value = new Buffer('Bitcoin Cash - Peer-to-Peer Electronic Cash');",
-              "const hash = bitcoinCash.crypto.Hash.sha256(value);",
-              "const bn = bitcoinCash.crypto.BN.fromBuffer(hash);",
-              "const address = new bitcoinCash.PrivateKey(bn).toAddress();",
+              "const hash = bch.crypto.Hash.sha256(value);",
+              "const bn = bch.crypto.BN.fromBuffer(hash);",
+              "const address = new bch.PrivateKey(bn).toAddress();",
               "",
               "console.log(address.toString()) // 126tFHmNHNAXDYT1QeEBEwBbEojib1VZyg",
             ].join('\n')}
@@ -40,9 +40,9 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
-              "const Address = bitcoinCash.Address;",
+              "const Address = bch.Address;",
               "const BitpayFormat = Address.BitpayFormat;",
               "const CashAddrFormat = Address.CashAddrFormat;",
               "",
@@ -59,18 +59,16 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
-              "const Address = bitcoinCash.Address;",
+              "const Address = bch.Address;",
+              "const fromString = Address.fromString;",
               "const BitpayFormat = Address.BitpayFormat;",
               "const CashAddrFormat = Address.CashAddrFormat;",
               "",
-              "const legacy = Address.fromString('1MF7A5H2nHYYJMieouip2SkZiFZMBKqSZe',",
-              "                 'mainnet', 'pubkeyhash');",
-              "const bitpay = Address.fromString('Cchzj7d6fLX5CVd5Vf3jbxNbLNmm4BTYuG',",
-              "                 'mainnet', 'pubkeyhash', BitpayFormat);",
-              "const cashaddr = Address.fromString('bitcoincash:qr0q67nsn66cf3klfufttr0vuswh3w5nt5jqpp20t9',",
-              "                 'mainnet', 'pubkeyhash', CashAddrFormat);",
+              "const legacy = fromString('1MF7A5H2nHYYJMieouip2SkZiFZMBKqSZe', 'livenet', 'pubkeyhash');",
+              "const bitpay = fromString('Cchzj7d6fLX5CVd5Vf3jbxNbLNmm4BTYuG', 'livenet', 'pubkeyhash', BitpayFormat);",
+              "const cashaddr = fromString('bitcoincash:qr0q67nsn66cf3klfufttr0vuswh3w5nt5jqpp20t9', 'livenet', 'pubkeyhash', CashAddrFormat);",
             ].join('\n')}
           </code>
         </pre>
@@ -79,10 +77,10 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
               "const wif = 'Kxr9tQED9H44gCmp6HAdmemAzU3n84H3dGkuWTKvE23JgHMW8gct';",
-              "const address = new bitcoinCash.PrivateKey(wif).toAddress();",
+              "const address = new bch.PrivateKey(wif).toAddress();",
               "",
               "console.log(address.toString()) // 19AAjaTUbRjQCMuVczepkoPswiZRhjtg31",
             ].join('\n')}
@@ -93,9 +91,9 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
-              "const privateKey = new bitcoinCash.PrivateKey('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy');",
+              "const privateKey = new bch.PrivateKey('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy');",
               "const utxo = {",
               "  'txId' : '115e8f72f39fad874cfab0deed11a80f24f967a84079fb56ddf53ea02e308986',",
               "  'outputIndex' : 0,",
@@ -103,7 +101,7 @@ class Examples extends Component {
               "  'script' : '76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac',",
               "  'satoshis' : 50000",
               "};",
-              "const transaction = new bitcoinCash.Transaction()",
+              "const transaction = new bch.Transaction()",
               "  .from(utxo)",
               "  .to('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)",
               "  .sign(privateKey);",
@@ -117,8 +115,9 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
-              "const Message = require('bitcore-message');",
+              "const bch = require('bitcoincashjs');",
+              "",
+              "const Message = bch.Message;",
               "",
               "const message = new Message('Bitcoin Cash - Peer-to-Peer Electronic Cash.');",
               "const address = '13Js7D3q4KvfSqgKN8LpNq57gcahrVc5JZ';",
@@ -133,12 +132,12 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
-              "const Message = require('bitcore-message');",
+              "const bch = require('bitcoincashjs');",
+              "",
+              "const Message = bch.Message;",
               "",
               "const message = new Message('Bitcoin Cash - Peer-to-Peer Electronic Cash.');",
-              "const privateKey =",
-              "    new bitcoinCash.PrivateKey('L23PpjkBQqpAF4vbMHNfTZAb3KFPBSawQ7KinFTzz7dxq6TZX8UA');",
+              "const privateKey = new bch.PrivateKey('L23PpjkBQqpAF4vbMHNfTZAb3KFPBSawQ7KinFTzz7dxq6TZX8UA');",
               "const signature = message.sign(privateKey);",
               "",
               "console.log(signature.toString()) // IJuZCwN/4HtIRulOb/zRLU1oCP...",
@@ -150,9 +149,9 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
-              "const privateKey = new bitcoinCash.PrivateKey('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy');",
+              "const privateKey = new bch.PrivateKey('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy');",
               "const utxo = {",
               "  'txId' : '115e8f72f39fad874cfab0deed11a80f24f967a84079fb56ddf53ea02e308986',",
               "  'outputIndex' : 0,",
@@ -160,7 +159,7 @@ class Examples extends Component {
               "  'script' : '76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac',",
               "  'satoshis' : 50000",
               "};",
-              "const transaction = new bitcoinCash.Transaction()",
+              "const transaction = new bch.Transaction()",
               "  .from(utxo)",
               "  .addData('Bitcoin Cash - Peer-to-Peer Electronic Cash.') // Add OP_RETURN data",
               "  .sign(privateKey);",
@@ -174,7 +173,7 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
               "const publicKeys = [",
               "  '026477115981fe981a6918a6297d9803c4dc04f328f22041bedff886bbc2962e01',",
@@ -182,7 +181,7 @@ class Examples extends Component {
               "  '03c6103b3b83e4a24a0e33a4df246ef11772f9992663db0c35759a5e2ebf68d8e9'",
               "];",
               "const requiredSignatures = 2;",
-              "const address = new bitcoinCash.Address(publicKeys, requiredSignatures);",
+              "const address = new bch.Address(publicKeys, requiredSignatures);",
               "",
               "console.log(address.toString()) // 36NUkt6FWUi3LAWBqWRdDmdTWbt91Yvfu7",
             ].join('\n')}
@@ -193,22 +192,22 @@ class Examples extends Component {
         <pre>
           <code className="language-js">
             {[
-              "const bitcoinCash = require('bitcoincashjs');",
+              "const bch = require('bitcoincashjs');",
               "",
               "const privateKeys = [",
-              "  new bitcoinCash.PrivateKey('91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgwmaKkrx'),",
-              "  new bitcoinCash.PrivateKey('91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgww7vXtT')",
+              "  new bch.PrivateKey('91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgwmaKkrx'),",
+              "  new bch.PrivateKey('91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgww7vXtT')",
               "];",
-              "const publicKeys = privateKeys.map(bitcoinCash.PublicKey);",
-              "const address = new bitcoinCash.Address(publicKeys, 2); // 2 of 2",
+              "const publicKeys = privateKeys.map(bch.PublicKey);",
+              "const address = new bch.Address(publicKeys, 2); // 2 of 2",
               "const utxo = {",
               "  'txId' : '153068cdd81b73ec9d8dcce27f2c77ddda12dee3db424bff5cafdbe9f01c1756',",
               "  'outputIndex' : 0,",
               "  'address' : address.toString(),",
-              "  'script' : new bitcoinCash.Script(address).toHex(),",
+              "  'script' : new bch.Script(address).toHex(),",
               "  'satoshis' : 20000",
               "};",
-              "const transaction = new bitcoinCash.Transaction()",
+              "const transaction = new bch.Transaction()",
               "    .from(utxo, publicKeys, 2)",
               "    .to('mtoKs9V381UAhUia3d7Vb9GNak8Qvmcsme', 20000)",
               "    .sign(privateKeys);",

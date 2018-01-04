@@ -90,6 +90,14 @@
   margin-bottom: 25px;
 }
 
+.section p {
+  font-weight: 500;
+}
+
+.section ul li {
+  font-weight: 500;
+}
+
 .About h1 span {
   color: orange;
 }
